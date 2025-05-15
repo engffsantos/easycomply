@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - EasyComply{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button type="button" class="btn btn-sm btn-outline-secondary">Compartilhar</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+    </div>
+    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+      <span data-feather="calendar"></span>
+      Esta semana
+    </button>
+  </div>
+</div>
+
+{# Exemplo de cards para o dashboard #}
+<div class="row">
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Checklists Pendentes</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">5 <small class="text-muted">/ 12</small></h1>
+        <p>Checklists que requerem sua atenção.</p>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Ver Checklists</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Treinamentos</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">75<small class="text-muted">%</small></h1>
+        <p>Progresso nos treinamentos de conformidade.</p>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Acessar Treinamentos</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Documentos Recentes</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Política de Privacidade v1.2</li>
+          <li>Termo de Uso v2.0</li>
+          <li>Relatório de Impacto</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Ver Documentos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# Placeholder para gráficos - pode ser integrado com Chart.js ou similar via static/js/dashboard.js #}
+<h2>Relatórios</h2>
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }} {# Mantém os scripts do base.html #}
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace() // Para ícones do Feather
+</script>
+{# <script src="{{ url_for("static", filename="js/dashboard.js") }}"></script> #} {# dashboard.js será criado depois #}
+{% endblock %}
+

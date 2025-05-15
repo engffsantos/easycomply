@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="{{ url_for('main.index') }}">EasyComply</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('main.index') }}">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('checklist_bp.checklist') }}">Checklists</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('documentos_bp.documentos') }}">Documentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Treinamentos</a> {# Ex: url_for('treinamentos_bp.index') se existir #}
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configurações</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Perfil</a>
+          <a class="dropdown-item" href="#">Empresa</a>
+          <a class="dropdown-item" href="#">Usuários</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth_bp.login_user') }}">Login/Sair</a>
+      </li>
+    </ul>
+  </div>
+</nav>

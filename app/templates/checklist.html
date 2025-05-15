@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Checklists - EasyComply{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Gerenciamento de Checklists</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addChecklistModal">
+      <span data-feather="plus-circle"></span>
+      Novo Checklist
+    </button>
+  </div>
+</div>
+
+{# Placeholder para a lista de checklists #}
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {# Exemplo de item de checklist - será populado dinamicamente #}
+      <tr>
+        <td>1</td>
+        <td>Conformidade LGPD Inicial</td>
+        <td>Checklist para avaliação inicial de conformidade com a LGPD.</td>
+        <td><span class="badge badge-warning">Pendente</span></td>
+        <td>
+          <button type="button" class="btn btn-sm btn-outline-info">Ver</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+          <button type="button" class="btn btn-sm btn-outline-danger">Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Segurança de Dados</td>
+        <td>Verificação de políticas e práticas de segurança de dados.</td>
+        <td><span class="badge badge-success">Concluído</span></td>
+        <td>
+          <button type="button" class="btn btn-sm btn-outline-info">Ver</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+          <button type="button" class="btn btn-sm btn-outline-danger">Excluir</button>
+        </td>
+      </tr>
+      {# Adicionar mais linhas conforme necessário ou via loop Jinja #}
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal para Adicionar Novo Checklist -->
+<div class="modal fade" id="addChecklistModal" tabindex="-1" aria-labelledby="addChecklistModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addChecklistModalLabel">Novo Checklist</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="addChecklistForm">
+          <div class="form-group">
+            <label for="checklistTitle">Título</label>
+            <input type="text" class="form-control" id="checklistTitle" name="title" required>
+          </div>
+          <div class="form-group">
+            <label for="checklistDescription">Descrição</label>
+            <textarea class="form-control" id="checklistDescription" name="description" rows="3"></textarea>
+          </div>
+          {# Adicionar mais campos se necessário #}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" form="addChecklistForm" class="btn btn-primary">Salvar Checklist</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace();
+</script>
+{% endblock %}
+
