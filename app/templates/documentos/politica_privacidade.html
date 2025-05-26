@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade</title>
+    <style>
+        body {
+            font-family: "Noto Sans", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .date {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .signature {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>POLÍTICA DE PRIVACIDADE</h1>
+            <p class="date">Última atualização: {{ now.strftime('%d/%m/%Y') }}</p>
+        </div>
+
+        <h2>1. INTRODUÇÃO</h2>
+        <p>A <strong>{{ empresa_nome }}</strong> ("nós", "nosso" ou "empresa") está comprometida em proteger a privacidade e os dados pessoais dos usuários de nossos serviços. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos suas informações pessoais em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
+        <p>Ao utilizar nossos serviços, você concorda com as práticas descritas nesta Política de Privacidade.</p>
+
+        <h2>2. DADOS PESSOAIS COLETADOS</h2>
+        <p>Podemos coletar os seguintes tipos de dados pessoais:</p>
+        <p>{{ tipo_dados }}</p>
+
+        <h2>3. FINALIDADES DO TRATAMENTO</h2>
+        <p>Utilizamos seus dados pessoais para as seguintes finalidades:</p>
+        <p>{{ finalidade }}</p>
+
+        <h2>4. BASE LEGAL PARA O TRATAMENTO</h2>
+        <p>O tratamento de seus dados pessoais é realizado com base na seguinte fundamentação legal:</p>
+        {% if base_legal == "consentimento" %}
+        <p><strong>Consentimento:</strong> Você nos deu permissão específica para tratar seus dados pessoais para uma ou mais finalidades específicas.</p>
+        {% elif base_legal == "contrato" %}
+        <p><strong>Execução de Contrato:</strong> O tratamento é necessário para a execução de um contrato do qual você é parte ou para procedimentos preliminares relacionados ao contrato.</p>
+        {% elif base_legal == "obrigacao_legal" %}
+        <p><strong>Obrigação Legal:</strong> O tratamento é necessário para o cumprimento de uma obrigação legal à qual estamos sujeitos.</p>
+        {% elif base_legal == "interesse_legitimo" %}
+        <p><strong>Interesse Legítimo:</strong> O tratamento é necessário para atender aos interesses legítimos da empresa ou de terceiros, exceto quando prevalecerem seus direitos e liberdades fundamentais que exijam a proteção dos dados pessoais.</p>
+        {% elif base_legal == "protecao_credito" %}
+        <p><strong>Proteção ao Crédito:</strong> O tratamento é necessário para atividades de proteção ao crédito.</p>
+        {% elif base_legal == "tutela_saude" %}
+        <p><strong>Tutela da Saúde:</strong> O tratamento é necessário para a tutela da saúde, em procedimento realizado por profissionais da área da saúde ou por entidades sanitárias.</p>
+        {% endif %}
+
+        <h2>5. COMPARTILHAMENTO DE DADOS</h2>
+        {% if compartilhamento %}
+        <p>Podemos compartilhar seus dados pessoais com:</p>
+        <p>{{ compartilhamento }}</p>
+        {% else %}
+        <p>Não compartilhamos seus dados pessoais com terceiros, exceto quando necessário para cumprir com obrigações legais ou regulatórias, ou quando você autorizar expressamente.</p>
+        {% endif %}
+
+        <h2>6. ARMAZENAMENTO E SEGURANÇA</h2>
+        <p>Implementamos medidas técnicas e organizacionais apropriadas para proteger seus dados pessoais contra acesso não autorizado, perda acidental, divulgação ou destruição.</p>
+        <p>Seus dados pessoais serão armazenados pelo tempo necessário para cumprir com as finalidades para as quais foram coletados, exceto quando um período de retenção mais longo for exigido ou permitido por lei.</p>
+
+        <h2>7. SEUS DIREITOS</h2>
+        <p>De acordo com a LGPD, você tem os seguintes direitos em relação aos seus dados pessoais:</p>
+        <ul>
+            <li>Confirmação da existência de tratamento</li>
+            <li>Acesso aos dados</li>
+            <li>Correção de dados incompletos, inexatos ou desatualizados</li>
+            <li>Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD</li>
+            <li>Portabilidade dos dados</li>
+            <li>Eliminação dos dados pessoais tratados com o consentimento</li>
+            <li>Informação sobre entidades públicas e privadas com as quais compartilhamos seus dados</li>
+            <li>Informação sobre a possibilidade de não fornecer consentimento e sobre as consequências da negativa</li>
+            <li>Revogação do consentimento</li>
+        </ul>
+
+        <h2>8. CONTATO DO ENCARREGADO (DPO)</h2>
+        <p>Para exercer seus direitos ou esclarecer dúvidas sobre esta Política de Privacidade, entre em contato com nosso Encarregado de Proteção de Dados (DPO) através do e-mail: dpo@{{ empresa_nome|lower|replace(" ", "")|replace(".", "")|replace(",", "") }}.com.br</p>
+
+        <h2>9. ALTERAÇÕES NESTA POLÍTICA</h2>
+        <p>Podemos atualizar esta Política de Privacidade periodicamente. A versão mais recente estará sempre disponível em nosso site. Recomendamos que você revise esta política regularmente.</p>
+
+        <div class="footer">
+            <p>© {{ now.year }} {{ empresa_nome }} - Todos os direitos reservados</p>
+        </div>
+
+        <div class="signature">
+            <p>Local e data: ________________________________</p>
+            <p>Assinatura: __________________________________</p>
+        </div>
+    </div>
+</body>
+</html>

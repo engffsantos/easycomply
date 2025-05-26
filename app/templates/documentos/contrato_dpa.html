@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Processamento de Dados (DPA)</title>
+    <style>
+        body {
+            font-family: "Noto Sans", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .date {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .signature {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature-block {
+            width: 45%;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CONTRATO DE PROCESSAMENTO DE DADOS (DPA)</h1>
+            <p class="date">Data: {{ now.strftime('%d/%m/%Y') }}</p>
+        </div>
+
+        <p>Este Contrato de Processamento de Dados ("DPA") é celebrado entre:</p>
+        
+        <p><strong>{{ empresa_nome }}</strong>, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº [CNPJ], com sede em [Endereço], doravante denominada <strong>"CONTROLADOR"</strong>;</p>
+        
+        <p>e</p>
+        
+        <p><strong>[NOME DO FORNECEDOR/PARCEIRO]</strong>, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº [CNPJ], com sede em [Endereço], doravante denominada <strong>"OPERADOR"</strong>.</p>
+
+        <h2>1. DEFINIÇÕES</h2>
+        <p>Para os fins deste DPA, os termos abaixo terão os seguintes significados:</p>
+        <p><strong>1.1. "Dados Pessoais"</strong>: informação relacionada a pessoa natural identificada ou identificável;</p>
+        <p><strong>1.2. "Titular"</strong>: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento;</p>
+        <p><strong>1.3. "Tratamento"</strong>: toda operação realizada com dados pessoais, como coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração;</p>
+        <p><strong>1.4. "LGPD"</strong>: Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018);</p>
+        <p><strong>1.5. "Incidente de Segurança"</strong>: qualquer evento adverso confirmado, relacionado à segurança dos dados pessoais, que possa comprometer a confidencialidade, integridade ou disponibilidade dos dados pessoais.</p>
+
+        <h2>2. OBJETO</h2>
+        <p>2.1. O presente DPA tem por objeto estabelecer as condições, obrigações e responsabilidades das Partes quanto ao tratamento de dados pessoais realizado pelo OPERADOR em nome do CONTROLADOR, em conformidade com a LGPD.</p>
+        <p>2.2. O OPERADOR realizará o tratamento dos seguintes dados pessoais em nome do CONTROLADOR:</p>
+        <p>{{ tipo_dados }}</p>
+
+        <h2>3. FINALIDADE DO TRATAMENTO</h2>
+        <p>3.1. O OPERADOR tratará os dados pessoais exclusivamente para as seguintes finalidades:</p>
+        <p>{{ finalidade }}</p>
+        <p>3.2. O OPERADOR não poderá utilizar os dados pessoais para qualquer outra finalidade que não as expressamente autorizadas pelo CONTROLADOR neste DPA.</p>
+
+        <h2>4. OBRIGAÇÕES DO OPERADOR</h2>
+        <p>4.1. O OPERADOR compromete-se a:</p>
+        <p>a) Tratar os dados pessoais de acordo com as instruções documentadas do CONTROLADOR;</p>
+        <p>b) Garantir que as pessoas autorizadas a tratar os dados pessoais assumam um compromisso de confidencialidade;</p>
+        <p>c) Adotar medidas técnicas e organizativas de segurança apropriadas para proteger os dados pessoais;</p>
+        <p>d) Não contratar outro operador sem autorização prévia do CONTROLADOR;</p>
+        <p>e) Auxiliar o CONTROLADOR no atendimento às solicitações dos titulares de dados;</p>
+        <p>f) Auxiliar o CONTROLADOR no cumprimento das obrigações relativas à segurança dos dados, notificação de incidentes e avaliação de impacto;</p>
+        <p>g) Eliminar ou devolver todos os dados pessoais ao CONTROLADOR após o término da prestação de serviços;</p>
+        <p>h) Disponibilizar ao CONTROLADOR todas as informações necessárias para demonstrar o cumprimento das obrigações previstas neste DPA.</p>
+
+        <h2>5. OBRIGAÇÕES DO CONTROLADOR</h2>
+        <p>5.1. O CONTROLADOR compromete-se a:</p>
+        <p>a) Fornecer instruções documentadas ao OPERADOR sobre o tratamento de dados pessoais;</p>
+        <p>b) Garantir que possui base legal para o tratamento dos dados pessoais;</p>
+        <p>c) Informar o OPERADOR sobre quaisquer alterações nas instruções de tratamento;</p>
+        <p>d) Responder às solicitações dos titulares de dados.</p>
+
+        <h2>6. SEGURANÇA DOS DADOS</h2>
+        <p>6.1. O OPERADOR implementará medidas técnicas e organizativas adequadas para garantir um nível de segurança apropriado ao risco, incluindo, entre outras:</p>
+        <p>a) Pseudonimização e criptografia de dados pessoais;</p>
+        <p>b) Capacidade de assegurar a confidencialidade, integridade, disponibilidade e resiliência dos sistemas e serviços de tratamento;</p>
+        <p>c) Capacidade de restabelecer a disponibilidade e o acesso aos dados pessoais em tempo hábil no caso de um incidente físico ou técnico;</p>
+        <p>d) Processo para testar, avaliar e verificar regularmente a eficácia das medidas técnicas e organizativas para garantir a segurança do tratamento.</p>
+
+        <h2>7. NOTIFICAÇÃO DE INCIDENTES</h2>
+        <p>7.1. O OPERADOR notificará o CONTROLADOR, sem demora injustificada, após tomar conhecimento de um incidente de segurança que afete os dados pessoais tratados em nome do CONTROLADOR.</p>
+        <p>7.2. A notificação deverá conter, no mínimo:</p>
+        <p>a) Descrição da natureza do incidente;</p>
+        <p>b) Categorias e número aproximado de titulares afetados;</p>
+        <p>c) Categorias e número aproximado de registros de dados afetados;</p>
+        <p>d) Medidas adotadas ou propostas para mitigar os possíveis efeitos adversos.</p>
+
+        <h2>8. SUBCONTRATAÇÃO</h2>
+        <p>8.1. O OPERADOR não poderá subcontratar outro operador para realizar atividades de tratamento específicas em nome do CONTROLADOR sem autorização prévia e específica do CONTROLADOR.</p>
+        <p>8.2. Quando o OPERADOR recorrer a outro operador para realizar atividades de tratamento específicas em nome do CONTROLADOR, serão impostas a esse outro operador as mesmas obrigações de proteção de dados estabelecidas neste DPA.</p>
+
+        <h2>9. TRANSFERÊNCIA INTERNACIONAL DE DADOS</h2>
+        <p>9.1. O OPERADOR não transferirá dados pessoais para fora do Brasil sem a autorização prévia e por escrito do CONTROLADOR.</p>
+        <p>9.2. Qualquer transferência internacional de dados pessoais deverá cumprir com os requisitos estabelecidos na LGPD.</p>
+
+        <h2>10. AUDITORIA</h2>
+        <p>10.1. O OPERADOR permitirá e contribuirá para auditorias, incluindo inspeções, realizadas pelo CONTROLADOR ou por outro auditor mandatado pelo CONTROLADOR.</p>
+
+        <h2>11. PRAZO E RESCISÃO</h2>
+        <p>11.1. Este DPA permanecerá em vigor enquanto o OPERADOR tratar dados pessoais em nome do CONTROLADOR.</p>
+        <p>11.2. Em caso de rescisão deste DPA, o OPERADOR deverá, a critério do CONTROLADOR, devolver ou eliminar todos os dados pessoais tratados em nome do CONTROLADOR, a menos que a legislação aplicável exija a conservação dos dados pessoais.</p>
+
+        <h2>12. DISPOSIÇÕES GERAIS</h2>
+        <p>12.1. Este DPA constitui parte integrante do contrato principal celebrado entre as Partes.</p>
+        <p>12.2. Em caso de conflito entre as disposições deste DPA e as do contrato principal, prevalecerão as disposições deste DPA no que diz respeito ao tratamento de dados pessoais.</p>
+        <p>12.3. Este DPA será regido e interpretado de acordo com as leis do Brasil.</p>
+
+        <p>E, por estarem assim justas e contratadas, as Partes assinam o presente instrumento em 2 (duas) vias de igual teor e forma, na presença das testemunhas abaixo.</p>
+
+        <div class="signature">
+            <div class="signature-block">
+                <p>{{ empresa_nome }}</p>
+                <p>CONTROLADOR</p>
+                <p>Nome: ______________________</p>
+                <p>Cargo: ______________________</p>
+            </div>
+            
+            <div class="signature-block">
+                <p>[NOME DO FORNECEDOR/PARCEIRO]</p>
+                <p>OPERADOR</p>
+                <p>Nome: ______________________</p>
+                <p>Cargo: ______________________</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <p><strong>Testemunhas:</strong></p>
+            <div class="signature">
+                <div class="signature-block">
+                    <p>Nome: ______________________</p>
+                    <p>CPF: _______________________</p>
+                </div>
+                
+                <div class="signature-block">
+                    <p>Nome: ______________________</p>
+                    <p>CPF: _______________________</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© {{ now.year }} {{ empresa_nome }} - Todos os direitos reservados</p>
+        </div>
+    </div>
+</body>
+</html>
